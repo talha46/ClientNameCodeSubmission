@@ -1,11 +1,14 @@
 package com.apex.codeassesment.di
 
 import android.content.Context
+import com.apex.codeassesment.ui.main.JetpackComposeActivity
 import com.apex.codeassesment.ui.main.MainActivity
 import dagger.BindsInstance
 import dagger.Component
+import javax.inject.Singleton
 
-@Component(modules = [MainModule::class])
+@Singleton
+@Component(modules = [MainModule::class, NetworkModule::class, RepositoryModule::class])
 interface MainComponent {
 
   @Component.Factory
@@ -18,4 +21,5 @@ interface MainComponent {
   }
 
   fun inject(mainActivity: MainActivity)
+  fun inject(jetpackComposeActivity: JetpackComposeActivity)
 }

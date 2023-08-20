@@ -19,7 +19,8 @@ data class User(
   val cell: String? = null,
   val id: Id? = null,
   val picture: Picture? = null,
-  val nat: String? = null
+  val nat: String? = null,
+  val error: String? = null
 ) : Parcelable {
 
   // TODO (2 point): Add tests
